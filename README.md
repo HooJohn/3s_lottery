@@ -27,8 +27,7 @@ africa-lottery-platform/
 │   ├── frontend/           # 前端Docker配置
 │   └── nginx/              # Nginx配置
 ├── docs/                   # 项目文档
-├── scripts/                # 部署和工具脚本
-└── .kiro/                  # Kiro规范文档
+└── scripts/                # 部署和工具脚本
 ```
 
 ## 技术栈
