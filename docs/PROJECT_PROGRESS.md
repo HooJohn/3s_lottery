@@ -448,7 +448,7 @@ africa-lottery-platform/
 **项目状态**: 进行中 (8/13个主要任务已完成)  
 **完成度**: 约62% (基础架构、核心系统、游戏系统、体育博彩集成、统一返水奖励系统)  
 **预计完成时间**: 20周 (约5个月)  
-**技术文档**: `.kiro/specs/africa-lottery-platform/`  
+**技术文档**: `docs/africa-lottery-platform/`  
 
 **核心优势**: 行业领先的8.4%奖励率 + Django大规模架构 + 完整的本土化支持
 
