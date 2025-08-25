@@ -7,7 +7,7 @@
 
 ```
 africa-lottery-platform/
-├── 📋 .kiro/specs/                    # Kiro规范文档
+├── 📋 docs/                    # 规范文档
 │   └── africa-lottery-platform/
 │       ├── requirements.md            # 需求文档
 │       ├── design.md                  # 设计文档
