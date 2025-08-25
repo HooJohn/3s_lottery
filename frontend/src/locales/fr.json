@@ -1,0 +1,509 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "warning": "Avertissement",
+    "info": "Information",
+    "confirm": "Confirmer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "submit": "Soumettre",
+    "reset": "Réinitialiser",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "refresh": "Actualiser",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "view": "Voir",
+    "download": "Télécharger",
+    "upload": "Téléverser",
+    "copy": "Copier",
+    "share": "Partager",
+    "more": "Plus",
+    "less": "Moins",
+    "all": "Tout",
+    "none": "Aucun",
+    "yes": "Oui",
+    "no": "Non",
+    "ok": "OK",
+    "done": "Terminé",
+    "continue": "Continuer",
+    "skip": "Ignorer",
+    "retry": "Réessayer",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "register": "S'inscrire"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "games": "Jeux",
+    "lottery11x5": "Loterie 11x5",
+    "scratch": "Cartes à gratter",
+    "superlotto": "Super Lotto",
+    "sports": "Paris sportifs",
+    "wallet": "Portefeuille",
+    "deposit": "Dépôt",
+    "withdraw": "Retrait",
+    "transactions": "Transactions",
+    "profile": "Profil",
+    "rewards": "Récompenses",
+    "vip": "VIP",
+    "referral": "Parrainage",
+    "support": "Support",
+    "settings": "Paramètres",
+    "dashboard": "Tableau de bord",
+    "menu": "Menu",
+    "notifications": "Notifications",
+    "language": "Langue",
+    "user": "Utilisateur",
+    "account": "Compte",
+    "balance": "Solde",
+    "collapse": "Réduire",
+    "expand": "Développer"
+  },
+  "auth": {
+    "login": {
+      "title": "Bon retour",
+      "subtitle": "Connectez-vous à votre compte pour continuer",
+      "username": "Nom d'utilisateur / Email / Téléphone",
+      "password": "Mot de passe",
+      "rememberMe": "Se souvenir de moi",
+      "forgotPassword": "Mot de passe oublié ?",
+      "loginButton": "Se connecter",
+      "noAccount": "Vous n'avez pas de compte ?",
+      "signUp": "Inscrivez-vous ici",
+      "errors": {
+        "required": "Ce champ est requis",
+        "invalid": "Nom d'utilisateur ou mot de passe invalide",
+        "blocked": "Le compte a été bloqué",
+        "tooManyAttempts": "Trop de tentatives de connexion. Veuillez réessayer plus tard."
+      }
+    },
+    "register": {
+      "title": "Créer un compte",
+      "subtitle": "Rejoignez des milliers de joueurs et commencez à gagner aujourd'hui",
+      "username": "Nom d'utilisateur",
+      "email": "Adresse email",
+      "phone": "Numéro de téléphone",
+      "fullName": "Nom complet",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "country": "Pays",
+      "referralCode": "Code de parrainage (Optionnel)",
+      "agreeTerms": "J'accepte les Conditions de service et la Politique de confidentialité",
+      "registerButton": "Créer un compte",
+      "haveAccount": "Vous avez déjà un compte ?",
+      "signIn": "Connectez-vous ici",
+      "countries": {
+        "NG": "Nigeria",
+        "CM": "Cameroun"
+      },
+      "errors": {
+        "usernameExists": "Le nom d'utilisateur existe déjà",
+        "emailExists": "L'email est déjà enregistré",
+        "phoneExists": "Le numéro de téléphone est déjà enregistré",
+        "passwordMismatch": "Les mots de passe ne correspondent pas",
+        "weakPassword": "Le mot de passe est trop faible",
+        "invalidPhone": "Format de numéro de téléphone invalide",
+        "invalidEmail": "Adresse email invalide",
+        "termsRequired": "Vous devez accepter les termes et conditions"
+      }
+    },
+    "forgotPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "subtitle": "Entrez votre numéro de téléphone pour recevoir un code de vérification",
+      "phone": "Numéro de téléphone",
+      "sendCode": "Envoyer le code",
+      "verificationCode": "Code de vérification",
+      "newPassword": "Nouveau mot de passe",
+      "confirmPassword": "Confirmer le nouveau mot de passe",
+      "resetButton": "Réinitialiser le mot de passe",
+      "backToLogin": "Retour à la connexion",
+      "codeResent": "Code de vérification envoyé avec succès",
+      "passwordReset": "Mot de passe réinitialisé avec succès"
+    },
+    "twoFactor": {
+      "title": "Authentification à deux facteurs",
+      "subtitle": "Entrez le code de vérification envoyé sur votre téléphone",
+      "code": "Code de vérification",
+      "verify": "Vérifier",
+      "resendCode": "Renvoyer le code",
+      "codeExpired": "Le code a expiré",
+      "invalidCode": "Code de vérification invalide"
+    }
+  },
+  "kyc": {
+    "title": "Vérification d'identité",
+    "subtitle": "Complétez votre vérification d'identité pour débloquer toutes les fonctionnalités",
+    "status": {
+      "pending": "En attente de révision",
+      "approved": "Approuvé",
+      "rejected": "Rejeté",
+      "expired": "Expiré"
+    },
+    "documentTypes": {
+      "NIN": "Numéro d'identification nationale",
+      "PASSPORT": "Passeport international",
+      "DRIVERS_LICENSE": "Permis de conduire",
+      "VOTERS_CARD": "Carte d'électeur"
+    },
+    "steps": {
+      "selectDocument": "Sélectionner le type de document",
+      "uploadDocument": "Téléverser le document",
+      "takeSelfie": "Prendre un selfie",
+      "review": "Réviser et soumettre"
+    },
+    "upload": {
+      "frontSide": "Recto",
+      "backSide": "Verso",
+      "selfie": "Selfie avec le document",
+      "dragDrop": "Glissez et déposez votre fichier ici, ou cliquez pour parcourir",
+      "fileTypes": "Formats supportés : JPG, PNG, PDF (Max 5MB)",
+      "retake": "Reprendre la photo",
+      "continue": "Continuer"
+    },
+    "requirements": {
+      "title": "Exigences du document",
+      "clear": "L'image doit être claire et lisible",
+      "complete": "Tous les coins du document doivent être visibles",
+      "original": "Document original uniquement (pas de photocopies)",
+      "valid": "Le document doit être valide et non expiré"
+    },
+    "success": "Vérification d'identité soumise avec succès. Nous examinerons vos documents dans les 24-48 heures.",
+    "rejected": "Votre vérification d'identité a été rejetée. Veuillez soumettre à nouveau avec les bons documents."
+  },
+  "wallet": {
+    "balance": {
+      "title": "Solde du compte",
+      "mainBalance": "Solde principal",
+      "bonusBalance": "Solde bonus",
+      "frozenBalance": "Solde gelé",
+      "totalBalance": "Solde total",
+      "availableBalance": "Solde disponible",
+      "lastUpdated": "Dernière mise à jour"
+    },
+    "deposit": {
+      "title": "Déposer des fonds",
+      "amount": "Montant du dépôt",
+      "selectMethod": "Sélectionner la méthode de paiement",
+      "methods": {
+        "bankTransfer": "Virement bancaire",
+        "paystack": "Paystack",
+        "flutterwave": "Flutterwave",
+        "opay": "OPay",
+        "palmpay": "PalmPay",
+        "moniepoint": "Moniepoint"
+      },
+      "quickAmounts": ["100", "500", "1 000", "5 000", "10 000", "50 000"],
+      "minimumAmount": "Dépôt minimum : ₦100",
+      "maximumAmount": "Dépôt maximum : ₦1 000 000",
+      "processingTime": "Temps de traitement : Instantané - 24 heures",
+      "depositButton": "Déposer maintenant",
+      "bankInfo": {
+        "title": "Informations de virement bancaire",
+        "bankName": "Nom de la banque",
+        "accountNumber": "Numéro de compte",
+        "accountName": "Nom du compte",
+        "reference": "Référence de virement",
+        "instructions": "Veuillez utiliser le numéro de référence lors du virement"
+      }
+    },
+    "withdraw": {
+      "title": "Retirer des fonds",
+      "amount": "Montant du retrait",
+      "selectAccount": "Sélectionner le compte bancaire",
+      "addAccount": "Ajouter un nouveau compte",
+      "availableBalance": "Disponible pour retrait",
+      "fee": "Frais de retrait",
+      "netAmount": "Vous recevrez",
+      "processingTime": "Temps de traitement : 1-3 jours ouvrables",
+      "withdrawButton": "Retirer maintenant",
+      "limits": {
+        "daily": "Limite quotidienne",
+        "remaining": "Restant aujourd'hui",
+        "times": "fois"
+      }
+    },
+    "transactions": {
+      "title": "Historique des transactions",
+      "types": {
+        "all": "Toutes les transactions",
+        "deposit": "Dépôts",
+        "withdraw": "Retraits",
+        "bet": "Paris",
+        "win": "Gains",
+        "reward": "Récompenses"
+      },
+      "periods": {
+        "today": "Aujourd'hui",
+        "week": "Cette semaine",
+        "month": "Ce mois",
+        "all": "Tout le temps"
+      },
+      "status": {
+        "pending": "En attente",
+        "processing": "En cours",
+        "completed": "Terminé",
+        "failed": "Échoué",
+        "cancelled": "Annulé"
+      },
+      "columns": {
+        "date": "Date",
+        "type": "Type",
+        "amount": "Montant",
+        "status": "Statut",
+        "reference": "Référence"
+      },
+      "noTransactions": "Aucune transaction trouvée",
+      "loadMore": "Charger plus"
+    }
+  },
+  "games": {
+    "lottery11x5": {
+      "title": "Loterie 11x5",
+      "currentDraw": "Tirage actuel",
+      "nextDraw": "Prochain tirage",
+      "timeLeft": "Temps restant",
+      "jackpot": "Jackpot",
+      "playTypes": {
+        "position": "Position",
+        "any2": "N'importe quel 2",
+        "any3": "N'importe quel 3",
+        "any4": "N'importe quel 4",
+        "any5": "N'importe quel 5"
+      },
+      "quickSelect": {
+        "all": "Tout",
+        "big": "Grand",
+        "small": "Petit",
+        "odd": "Impair",
+        "even": "Pair",
+        "clear": "Effacer"
+      },
+      "betPanel": {
+        "selectedNumbers": "Numéros sélectionnés",
+        "betAmount": "Montant du pari",
+        "multiplier": "Multiplicateur",
+        "totalAmount": "Montant total",
+        "potentialWin": "Gain potentiel",
+        "addToCart": "Ajouter au panier",
+        "betNow": "Parier maintenant"
+      },
+      "results": {
+        "title": "Résultats du tirage",
+        "latestResult": "Dernier résultat",
+        "winningNumbers": "Numéros gagnants",
+        "drawTime": "Heure du tirage",
+        "viewHistory": "Voir l'historique"
+      },
+      "trends": {
+        "title": "Tendances des numéros",
+        "hotNumbers": "Numéros chauds",
+        "coldNumbers": "Numéros froids",
+        "missing": "Manquant",
+        "frequency": "Fréquence"
+      }
+    },
+    "scratch": {
+      "title": "Cartes à gratter",
+      "cardPrice": "Prix de la carte",
+      "totalWinnings": "Gains totaux",
+      "scratchToReveal": "Grattez pour révéler",
+      "autoScratch": "Grattage automatique",
+      "buyCard": "Acheter une carte",
+      "playAgain": "Jouer encore",
+      "congratulations": "Félicitations !",
+      "youWon": "Vous avez gagné",
+      "noWin": "Bonne chance la prochaine fois !",
+      "rules": {
+        "title": "Règles du jeu",
+        "rule1": "Associez trois symboles '6' pour gagner le montant de base",
+        "rule2": "Associez trois symboles '66' pour gagner 2x le montant de base",
+        "rule3": "Associez trois symboles '666' pour gagner 3x le montant de base",
+        "rule4": "Les combinaisons gagnantes multiples sont additionnées"
+      }
+    },
+    "superlotto": {
+      "title": "Super Lotto",
+      "frontZone": "Zone avant",
+      "backZone": "Zone arrière",
+      "selectNumbers": "Sélectionnez {{count}} numéros parmi {{range}}",
+      "betTypes": {
+        "single": "Simple",
+        "multiple": "Multiple",
+        "system": "Système"
+      },
+      "machineSelect": "Sélection machine",
+      "multiplier": "Multiplicateur",
+      "prizeStructure": {
+        "title": "Structure des prix",
+        "level": "Niveau",
+        "match": "Correspondance",
+        "prize": "Prix"
+      }
+    },
+    "sports": {
+      "title": "Paris sportifs",
+      "platforms": "Plateformes disponibles",
+      "features": "Fonctionnalités",
+      "enterPlatform": "Entrer dans la plateforme",
+      "maintenance": "En maintenance",
+      "comingSoon": "Bientôt disponible",
+      "balanceTransfer": "Transfert de solde",
+      "mainWallet": "Portefeuille principal",
+      "platformWallet": "Portefeuille de plateforme",
+      "transferAmount": "Montant du transfert",
+      "transferIn": "Transférer vers",
+      "transferOut": "Transférer depuis"
+    }
+  },
+  "rewards": {
+    "vip": {
+      "title": "Niveaux VIP",
+      "currentLevel": "Niveau actuel",
+      "nextLevel": "Niveau suivant",
+      "progress": "Progrès",
+      "benefits": "Avantages",
+      "rebateRate": "Taux de remise",
+      "withdrawLimit": "Limite de retrait quotidien",
+      "withdrawTimes": "Fois de retrait quotidien",
+      "withdrawFee": "Frais de retrait",
+      "requiredTurnover": "Chiffre d'affaires requis",
+      "currentTurnover": "Chiffre d'affaires actuel",
+      "upgrade": "Exigences de mise à niveau"
+    },
+    "rebate": {
+      "title": "Enregistrements de remise",
+      "totalRebate": "Remise totale",
+      "todayRebate": "Remise d'aujourd'hui",
+      "rebateRate": "Taux de remise",
+      "effectiveTurnover": "Chiffre d'affaires effectif",
+      "rebateAmount": "Montant de la remise",
+      "settlementTime": "Heure de règlement",
+      "rules": {
+        "title": "Règles de remise",
+        "rule1": "La remise est calculée sur la base du chiffre d'affaires effectif",
+        "rule2": "La remise est réglée quotidiennement à 00:00 UTC",
+        "rule3": "Chiffre d'affaires effectif minimum : ₦1",
+        "rule4": "Le taux de remise varie selon le niveau VIP"
+      }
+    },
+    "referral": {
+      "title": "Programme de parrainage",
+      "myCode": "Mon code de parrainage",
+      "shareLink": "Lien de partage",
+      "qrCode": "Code QR",
+      "totalEarnings": "Gains totaux",
+      "teamSize": "Taille de l'équipe",
+      "levels": {
+        "level1": "Niveau 1 (3%)",
+        "level2": "Niveau 2 (2%)",
+        "level3": "Niveau 3 (1%)",
+        "level4": "Niveau 4 (0,7%)",
+        "level5": "Niveau 5 (0,5%)",
+        "level6": "Niveau 6 (0,3%)",
+        "level7": "Niveau 7 (0,1%)"
+      },
+      "teamStats": {
+        "members": "Membres",
+        "turnover": "Chiffre d'affaires",
+        "commission": "Commission"
+      },
+      "howItWorks": {
+        "title": "Comment ça marche",
+        "step1": "Partagez votre code de parrainage avec des amis",
+        "step2": "Ils s'inscrivent et commencent à jouer",
+        "step3": "Vous gagnez une commission sur leur chiffre d'affaires",
+        "step4": "La commission est payée quotidiennement"
+      }
+    }
+  },
+  "profile": {
+    "title": "Mon profil",
+    "personalInfo": "Informations personnelles",
+    "securitySettings": "Paramètres de sécurité",
+    "preferences": "Préférences",
+    "accountStatus": "Statut du compte",
+    "fields": {
+      "avatar": "Avatar",
+      "fullName": "Nom complet",
+      "username": "Nom d'utilisateur",
+      "email": "Adresse email",
+      "phone": "Numéro de téléphone",
+      "country": "Pays",
+      "birthDate": "Date de naissance",
+      "gender": "Genre",
+      "address": "Adresse",
+      "city": "Ville",
+      "state": "État"
+    },
+    "security": {
+      "changePassword": "Changer le mot de passe",
+      "currentPassword": "Mot de passe actuel",
+      "newPassword": "Nouveau mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "twoFactor": "Authentification à deux facteurs",
+      "enable2FA": "Activer 2FA",
+      "disable2FA": "Désactiver 2FA",
+      "deviceManagement": "Gestion des appareils",
+      "trustedDevices": "Appareils de confiance",
+      "loginHistory": "Historique de connexion"
+    },
+    "preferences": {
+      "language": "Langue",
+      "timezone": "Fuseau horaire",
+      "notifications": "Notifications",
+      "emailNotifications": "Notifications par email",
+      "smsNotifications": "Notifications SMS",
+      "theme": "Thème",
+      "currency": "Devise"
+    }
+  },
+  "support": {
+    "title": "Aide et support",
+    "faq": "Questions fréquemment posées",
+    "contactUs": "Nous contacter",
+    "liveChat": "Chat en direct",
+    "email": "Support par email",
+    "phone": "Support téléphonique",
+    "categories": {
+      "account": "Compte et inscription",
+      "payments": "Dépôts et retraits",
+      "games": "Jeux et paris",
+      "technical": "Problèmes techniques",
+      "security": "Sécurité et confidentialité"
+    },
+    "contactForm": {
+      "subject": "Sujet",
+      "message": "Message",
+      "attachment": "Pièce jointe",
+      "send": "Envoyer le message",
+      "messageSent": "Message envoyé avec succès"
+    }
+  },
+  "errors": {
+    "network": "Erreur réseau. Veuillez vérifier votre connexion.",
+    "server": "Erreur serveur. Veuillez réessayer plus tard.",
+    "unauthorized": "Vous n'êtes pas autorisé à effectuer cette action.",
+    "forbidden": "Accès refusé.",
+    "notFound": "La ressource demandée n'a pas été trouvée.",
+    "validation": "Veuillez vérifier votre saisie et réessayer.",
+    "timeout": "Délai d'attente de la demande. Veuillez réessayer.",
+    "unknown": "Une erreur inattendue s'est produite."
+  },
+  "success": {
+    "saved": "Modifications enregistrées avec succès",
+    "updated": "Mis à jour avec succès",
+    "deleted": "Supprimé avec succès",
+    "sent": "Envoyé avec succès",
+    "uploaded": "Téléversé avec succès",
+    "verified": "Vérifié avec succès"
+  }
+}

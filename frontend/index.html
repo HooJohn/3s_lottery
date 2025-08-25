@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
+    <!-- SEO Meta Tags -->
+    <title>非洲彩票平台 - 尼日利亚和喀麦隆在线彩票博彩</title>
+    <meta name="description" content="非洲领先的在线彩票博彩平台，支持11选5、大乐透、刮刮乐等多种游戏，安全可靠，即时派奖" />
+    <meta name="keywords" content="彩票,博彩,尼日利亚,喀麦隆,11选5,大乐透,刮刮乐,体育博彩" />
+    <meta name="author" content="Africa Lottery Platform" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="非洲彩票平台 - 在线彩票博彩" />
+    <meta property="og:description" content="非洲领先的在线彩票博彩平台，支持多种游戏，安全可靠" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lottery.africa" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="非洲彩票平台 - 在线彩票博彩" />
+    <meta name="twitter:description" content="非洲领先的在线彩票博彩平台，支持多种游戏，安全可靠" />
+    <meta name="twitter:image" content="/twitter-image.jpg" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#008751" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="非洲彩票" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    
+    <!-- Critical CSS (内联关键CSS以提高首屏渲染速度) -->
+    <style>
+      /* 关键CSS - 页面加载时的基础样式 */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        line-height: 1.5;
+        color: #2c3e50;
+        background-color: #f8f9fa;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* 加载动画 */
+      .loading-spinner {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #008751;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+        z-index: 9999;
+      }
+      
+      /* 隐藏加载动画当应用加载完成后 */
+      .app-loaded .loading-container {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 应用根节点 -->
+    <div id="root">
+      <!-- 初始加载动画 -->
+      <div class="loading-container">
+        <div style="text-align: center;">
+          <div class="loading-spinner"></div>
+          <p style="margin-top: 16px; color: #7f8c8d; font-size: 14px;">
+            加载中...
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 应用脚本 -->
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- 应用加载完成后隐藏加载动画 -->
+    <script>
+      window.addEventListener('load', function() {
+        document.body.classList.add('app-loaded');
+      });
+      
+      // 错误处理
+      window.addEventListener('error', function(e) {
+        console.error('Application error:', e.error);
+      });
+      
+      // Promise错误处理
+      window.addEventListener('unhandledrejection', function(e) {
+        console.error('Unhandled promise rejection:', e.reason);
+      });
+    </script>
+    
+    <!-- Service Worker注册 (PWA支持) -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    
+    <!-- 性能监控 -->
+    <script>
+      // 页面性能监控
+      window.addEventListener('load', function() {
+        if ('performance' in window) {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          console.log('Page load time:', perfData.loadEventEnd - perfData.fetchStart, 'ms');
+        }
+      });
+    </script>
+  </body>
+</html>

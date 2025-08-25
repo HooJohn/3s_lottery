@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  # PostgreSQL主数据库
+  postgres-master:
+    image: postgres:15
+    container_name: lottery-postgres-master
+    environment:
+      POSTGRES_DB: lottery_platform
+      POSTGRES_USER: lottery_user
+      POSTGRES_PASSWORD: lottery_password_2024
+      POSTGRES_REPLICATION_USER: replicator
+      POSTGRES_REPLICATION_PASSWORD: replicator_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_master_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    command: |
+      postgres 
+      -c wal_level=replica 
+      -c max_wal_senders=3 
+      -c max_replication_slots=3
+      -c hot_standby=on
+    networks:
+      - lottery-network
+
+  # PostgreSQL从数据库（读副本）
+  postgres-replica:
+    image: postgres:15
+    container_name: lottery-postgres-replica
+    environment:
+      POSTGRES_DB: lottery_platform
+      POSTGRES_USER: lottery_user
+      POSTGRES_PASSWORD: lottery_password_2024
+      PGUSER: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_replica_data:/var/lib/postgresql/data
+    depends_on:
+      - postgres-master
+    networks:
+      - lottery-network
+
+  # Redis缓存服务
+  redis:
+    image: redis:7-alpine
+    container_name: lottery-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    networks:
+      - lottery-network
+
+  # Redis Sentinel（高可用）
+  redis-sentinel:
+    image: redis:7-alpine
+    container_name: lottery-redis-sentinel
+    ports:
+      - "26379:26379"
+    depends_on:
+      - redis
+    volumes:
+      - ./redis-sentinel.conf:/etc/redis/sentinel.conf
+    command: redis-sentinel /etc/redis/sentinel.conf
+    networks:
+      - lottery-network
+
+volumes:
+  postgres_master_data:
+  postgres_replica_data:
+  redis_data:
+
+networks:
+  lottery-network:
+    driver: bridge

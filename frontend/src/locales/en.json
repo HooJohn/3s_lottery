@@ -1,0 +1,509 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "submit": "Submit",
+    "reset": "Reset",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "open": "Open",
+    "view": "View",
+    "download": "Download",
+    "upload": "Upload",
+    "copy": "Copy",
+    "share": "Share",
+    "more": "More",
+    "less": "Less",
+    "all": "All",
+    "none": "None",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "done": "Done",
+    "continue": "Continue",
+    "skip": "Skip",
+    "retry": "Retry",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register"
+  },
+  "navigation": {
+    "home": "Home",
+    "games": "Games",
+    "lottery11x5": "11x5 Lottery",
+    "scratch": "Scratch Cards",
+    "superlotto": "Super Lotto",
+    "sports": "Sports Betting",
+    "wallet": "Wallet",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "transactions": "Transactions",
+    "profile": "Profile",
+    "rewards": "Rewards",
+    "vip": "VIP",
+    "referral": "Referral",
+    "support": "Support",
+    "settings": "Settings",
+    "dashboard": "Dashboard",
+    "menu": "Menu",
+    "notifications": "Notifications",
+    "language": "Language",
+    "user": "User",
+    "account": "Account",
+    "balance": "Balance",
+    "collapse": "Collapse",
+    "expand": "Expand"
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your account to continue",
+      "username": "Username / Email / Phone",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "loginButton": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up here",
+      "errors": {
+        "required": "This field is required",
+        "invalid": "Invalid username or password",
+        "blocked": "Account has been blocked",
+        "tooManyAttempts": "Too many login attempts. Please try again later."
+      }
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Join thousands of players and start winning today",
+      "username": "Username",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "fullName": "Full Name",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "country": "Country",
+      "referralCode": "Referral Code (Optional)",
+      "agreeTerms": "I agree to the Terms of Service and Privacy Policy",
+      "registerButton": "Create Account",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in here",
+      "countries": {
+        "NG": "Nigeria",
+        "CM": "Cameroon"
+      },
+      "errors": {
+        "usernameExists": "Username already exists",
+        "emailExists": "Email already registered",
+        "phoneExists": "Phone number already registered",
+        "passwordMismatch": "Passwords do not match",
+        "weakPassword": "Password is too weak",
+        "invalidPhone": "Invalid phone number format",
+        "invalidEmail": "Invalid email address",
+        "termsRequired": "You must agree to the terms and conditions"
+      }
+    },
+    "forgotPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your phone number to receive a verification code",
+      "phone": "Phone Number",
+      "sendCode": "Send Code",
+      "verificationCode": "Verification Code",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "resetButton": "Reset Password",
+      "backToLogin": "Back to Login",
+      "codeResent": "Verification code sent successfully",
+      "passwordReset": "Password reset successfully"
+    },
+    "twoFactor": {
+      "title": "Two-Factor Authentication",
+      "subtitle": "Enter the verification code sent to your phone",
+      "code": "Verification Code",
+      "verify": "Verify",
+      "resendCode": "Resend Code",
+      "codeExpired": "Code has expired",
+      "invalidCode": "Invalid verification code"
+    }
+  },
+  "kyc": {
+    "title": "Identity Verification",
+    "subtitle": "Complete your identity verification to unlock all features",
+    "status": {
+      "pending": "Pending Review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "expired": "Expired"
+    },
+    "documentTypes": {
+      "NIN": "National ID Number",
+      "PASSPORT": "International Passport",
+      "DRIVERS_LICENSE": "Driver's License",
+      "VOTERS_CARD": "Voter's Card"
+    },
+    "steps": {
+      "selectDocument": "Select Document Type",
+      "uploadDocument": "Upload Document",
+      "takeSelfie": "Take Selfie",
+      "review": "Review & Submit"
+    },
+    "upload": {
+      "frontSide": "Front Side",
+      "backSide": "Back Side",
+      "selfie": "Selfie with Document",
+      "dragDrop": "Drag and drop your file here, or click to browse",
+      "fileTypes": "Supported formats: JPG, PNG, PDF (Max 5MB)",
+      "retake": "Retake Photo",
+      "continue": "Continue"
+    },
+    "requirements": {
+      "title": "Document Requirements",
+      "clear": "Image must be clear and readable",
+      "complete": "All corners of the document must be visible",
+      "original": "Original document only (no photocopies)",
+      "valid": "Document must be valid and not expired"
+    },
+    "success": "Identity verification submitted successfully. We'll review your documents within 24-48 hours.",
+    "rejected": "Your identity verification was rejected. Please resubmit with correct documents."
+  },
+  "wallet": {
+    "balance": {
+      "title": "Account Balance",
+      "mainBalance": "Main Balance",
+      "bonusBalance": "Bonus Balance",
+      "frozenBalance": "Frozen Balance",
+      "totalBalance": "Total Balance",
+      "availableBalance": "Available Balance",
+      "lastUpdated": "Last updated"
+    },
+    "deposit": {
+      "title": "Deposit Funds",
+      "amount": "Deposit Amount",
+      "selectMethod": "Select Payment Method",
+      "methods": {
+        "bankTransfer": "Bank Transfer",
+        "paystack": "Paystack",
+        "flutterwave": "Flutterwave",
+        "opay": "OPay",
+        "palmpay": "PalmPay",
+        "moniepoint": "Moniepoint"
+      },
+      "quickAmounts": ["100", "500", "1,000", "5,000", "10,000", "50,000"],
+      "minimumAmount": "Minimum deposit: ₦100",
+      "maximumAmount": "Maximum deposit: ₦1,000,000",
+      "processingTime": "Processing time: Instant - 24 hours",
+      "depositButton": "Deposit Now",
+      "bankInfo": {
+        "title": "Bank Transfer Information",
+        "bankName": "Bank Name",
+        "accountNumber": "Account Number",
+        "accountName": "Account Name",
+        "reference": "Transfer Reference",
+        "instructions": "Please use the reference number when making the transfer"
+      }
+    },
+    "withdraw": {
+      "title": "Withdraw Funds",
+      "amount": "Withdrawal Amount",
+      "selectAccount": "Select Bank Account",
+      "addAccount": "Add New Account",
+      "availableBalance": "Available for withdrawal",
+      "fee": "Withdrawal Fee",
+      "netAmount": "You will receive",
+      "processingTime": "Processing time: 1-3 business days",
+      "withdrawButton": "Withdraw Now",
+      "limits": {
+        "daily": "Daily limit",
+        "remaining": "Remaining today",
+        "times": "times"
+      }
+    },
+    "transactions": {
+      "title": "Transaction History",
+      "types": {
+        "all": "All Transactions",
+        "deposit": "Deposits",
+        "withdraw": "Withdrawals",
+        "bet": "Bets",
+        "win": "Winnings",
+        "reward": "Rewards"
+      },
+      "periods": {
+        "today": "Today",
+        "week": "This Week",
+        "month": "This Month",
+        "all": "All Time"
+      },
+      "status": {
+        "pending": "Pending",
+        "processing": "Processing",
+        "completed": "Completed",
+        "failed": "Failed",
+        "cancelled": "Cancelled"
+      },
+      "columns": {
+        "date": "Date",
+        "type": "Type",
+        "amount": "Amount",
+        "status": "Status",
+        "reference": "Reference"
+      },
+      "noTransactions": "No transactions found",
+      "loadMore": "Load More"
+    }
+  },
+  "games": {
+    "lottery11x5": {
+      "title": "11x5 Lottery",
+      "currentDraw": "Current Draw",
+      "nextDraw": "Next Draw",
+      "timeLeft": "Time Left",
+      "jackpot": "Jackpot",
+      "playTypes": {
+        "position": "Position",
+        "any2": "Any 2",
+        "any3": "Any 3",
+        "any4": "Any 4",
+        "any5": "Any 5"
+      },
+      "quickSelect": {
+        "all": "All",
+        "big": "Big",
+        "small": "Small",
+        "odd": "Odd",
+        "even": "Even",
+        "clear": "Clear"
+      },
+      "betPanel": {
+        "selectedNumbers": "Selected Numbers",
+        "betAmount": "Bet Amount",
+        "multiplier": "Multiplier",
+        "totalAmount": "Total Amount",
+        "potentialWin": "Potential Win",
+        "addToCart": "Add to Cart",
+        "betNow": "Bet Now"
+      },
+      "results": {
+        "title": "Draw Results",
+        "latestResult": "Latest Result",
+        "winningNumbers": "Winning Numbers",
+        "drawTime": "Draw Time",
+        "viewHistory": "View History"
+      },
+      "trends": {
+        "title": "Number Trends",
+        "hotNumbers": "Hot Numbers",
+        "coldNumbers": "Cold Numbers",
+        "missing": "Missing",
+        "frequency": "Frequency"
+      }
+    },
+    "scratch": {
+      "title": "Scratch Cards",
+      "cardPrice": "Card Price",
+      "totalWinnings": "Total Winnings",
+      "scratchToReveal": "Scratch to reveal",
+      "autoScratch": "Auto Scratch",
+      "buyCard": "Buy Card",
+      "playAgain": "Play Again",
+      "congratulations": "Congratulations!",
+      "youWon": "You won",
+      "noWin": "Better luck next time!",
+      "rules": {
+        "title": "Game Rules",
+        "rule1": "Match three '6' symbols to win the base amount",
+        "rule2": "Match three '66' symbols to win 2x the base amount",
+        "rule3": "Match three '666' symbols to win 3x the base amount",
+        "rule4": "Multiple winning combinations are added together"
+      }
+    },
+    "superlotto": {
+      "title": "Super Lotto",
+      "frontZone": "Front Zone",
+      "backZone": "Back Zone",
+      "selectNumbers": "Select {{count}} numbers from {{range}}",
+      "betTypes": {
+        "single": "Single",
+        "multiple": "Multiple",
+        "system": "System"
+      },
+      "machineSelect": "Machine Select",
+      "multiplier": "Multiplier",
+      "prizeStructure": {
+        "title": "Prize Structure",
+        "level": "Level",
+        "match": "Match",
+        "prize": "Prize"
+      }
+    },
+    "sports": {
+      "title": "Sports Betting",
+      "platforms": "Available Platforms",
+      "features": "Features",
+      "enterPlatform": "Enter Platform",
+      "maintenance": "Under Maintenance",
+      "comingSoon": "Coming Soon",
+      "balanceTransfer": "Balance Transfer",
+      "mainWallet": "Main Wallet",
+      "platformWallet": "Platform Wallet",
+      "transferAmount": "Transfer Amount",
+      "transferIn": "Transfer In",
+      "transferOut": "Transfer Out"
+    }
+  },
+  "rewards": {
+    "vip": {
+      "title": "VIP Levels",
+      "currentLevel": "Current Level",
+      "nextLevel": "Next Level",
+      "progress": "Progress",
+      "benefits": "Benefits",
+      "rebateRate": "Rebate Rate",
+      "withdrawLimit": "Daily Withdraw Limit",
+      "withdrawTimes": "Daily Withdraw Times",
+      "withdrawFee": "Withdraw Fee",
+      "requiredTurnover": "Required Turnover",
+      "currentTurnover": "Current Turnover",
+      "upgrade": "Upgrade Requirements"
+    },
+    "rebate": {
+      "title": "Rebate Records",
+      "totalRebate": "Total Rebate",
+      "todayRebate": "Today's Rebate",
+      "rebateRate": "Rebate Rate",
+      "effectiveTurnover": "Effective Turnover",
+      "rebateAmount": "Rebate Amount",
+      "settlementTime": "Settlement Time",
+      "rules": {
+        "title": "Rebate Rules",
+        "rule1": "Rebate is calculated based on effective turnover",
+        "rule2": "Rebate is settled daily at 00:00 UTC",
+        "rule3": "Minimum effective turnover: ₦1",
+        "rule4": "Rebate rate varies by VIP level"
+      }
+    },
+    "referral": {
+      "title": "Referral Program",
+      "myCode": "My Referral Code",
+      "shareLink": "Share Link",
+      "qrCode": "QR Code",
+      "totalEarnings": "Total Earnings",
+      "teamSize": "Team Size",
+      "levels": {
+        "level1": "Level 1 (3%)",
+        "level2": "Level 2 (2%)",
+        "level3": "Level 3 (1%)",
+        "level4": "Level 4 (0.7%)",
+        "level5": "Level 5 (0.5%)",
+        "level6": "Level 6 (0.3%)",
+        "level7": "Level 7 (0.1%)"
+      },
+      "teamStats": {
+        "members": "Members",
+        "turnover": "Turnover",
+        "commission": "Commission"
+      },
+      "howItWorks": {
+        "title": "How It Works",
+        "step1": "Share your referral code with friends",
+        "step2": "They register and start playing",
+        "step3": "You earn commission from their turnover",
+        "step4": "Commission is paid daily"
+      }
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "personalInfo": "Personal Information",
+    "securitySettings": "Security Settings",
+    "preferences": "Preferences",
+    "accountStatus": "Account Status",
+    "fields": {
+      "avatar": "Avatar",
+      "fullName": "Full Name",
+      "username": "Username",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "country": "Country",
+      "birthDate": "Date of Birth",
+      "gender": "Gender",
+      "address": "Address",
+      "city": "City",
+      "state": "State"
+    },
+    "security": {
+      "changePassword": "Change Password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "twoFactor": "Two-Factor Authentication",
+      "enable2FA": "Enable 2FA",
+      "disable2FA": "Disable 2FA",
+      "deviceManagement": "Device Management",
+      "trustedDevices": "Trusted Devices",
+      "loginHistory": "Login History"
+    },
+    "preferences": {
+      "language": "Language",
+      "timezone": "Timezone",
+      "notifications": "Notifications",
+      "emailNotifications": "Email Notifications",
+      "smsNotifications": "SMS Notifications",
+      "theme": "Theme",
+      "currency": "Currency"
+    }
+  },
+  "support": {
+    "title": "Help & Support",
+    "faq": "Frequently Asked Questions",
+    "contactUs": "Contact Us",
+    "liveChat": "Live Chat",
+    "email": "Email Support",
+    "phone": "Phone Support",
+    "categories": {
+      "account": "Account & Registration",
+      "payments": "Deposits & Withdrawals",
+      "games": "Games & Betting",
+      "technical": "Technical Issues",
+      "security": "Security & Privacy"
+    },
+    "contactForm": {
+      "subject": "Subject",
+      "message": "Message",
+      "attachment": "Attachment",
+      "send": "Send Message",
+      "messageSent": "Message sent successfully"
+    }
+  },
+  "errors": {
+    "network": "Network error. Please check your connection.",
+    "server": "Server error. Please try again later.",
+    "unauthorized": "You are not authorized to perform this action.",
+    "forbidden": "Access denied.",
+    "notFound": "The requested resource was not found.",
+    "validation": "Please check your input and try again.",
+    "timeout": "Request timeout. Please try again.",
+    "unknown": "An unexpected error occurred."
+  },
+  "success": {
+    "saved": "Changes saved successfully",
+    "updated": "Updated successfully",
+    "deleted": "Deleted successfully",
+    "sent": "Sent successfully",
+    "uploaded": "Uploaded successfully",
+    "verified": "Verified successfully"
+  }
+}

@@ -1,0 +1,417 @@
+INFO 2025-07-24 14:34:23,753 autoreload 50683 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:32:03,576 autoreload 50848 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:33:16,107 autoreload 50887 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:34:55,505 autoreload 50931 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:37:37,934 autoreload 50983 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:43:21,176 autoreload 51074 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:44:17,434 autoreload 51142 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:44:47,120 autoreload 51167 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:45:36,854 autoreload 51203 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:47:41,278 autoreload 51246 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 15:58:04,863 autoreload 51434 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 16:10:40,517 autoreload 51682 140704629943744 Watching for file changes with StatReloader
+INFO 2025-07-24 16:15:07,807 autoreload 51827 140704629943744 Watching for file changes with StatReloader
+ERROR 2025-07-24 16:15:24,927 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:24,932 log 51827 123145558065152 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:24,971 basehttp 51827 123145558065152 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:15:27,828 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/connection.py", line 58, in __getitem__
+    return getattr(self._connections, alias)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/asgiref/local.py", line 121, in __getattr__
+    return getattr(storage, key)
+AttributeError: '_thread._local' object has no attribute 'read_replica'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/middleware.py", line 70, in __call__
+    self.process_request(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/middleware.py", line 120, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/models.py", line 191, in save
+    Request.garbage_collect(force=False)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/models.py", line 160, in garbage_collect
+    time_cutoff = cls.objects.order_by(
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 449, in __getitem__
+    qs._fetch_all()
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 284, in __iter__
+    compiler = queryset.query.get_compiler(queryset.db)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/sql/query.py", line 300, in get_compiler
+    connection = connections[using]
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/connection.py", line 61, in __getitem__
+    raise self.exception_class(f"The connection '{alias}' doesn't exist.")
+django.utils.connection.ConnectionDoesNotExist: The connection 'read_replica' doesn't exist.
+ERROR 2025-07-24 16:15:27,832 basehttp 51827 123145541275648 "GET /ws/ HTTP/1.1" 500 121415
+ERROR 2025-07-24 16:15:28,254 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:28,320 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:28,324 basehttp 51827 123145541275648 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:15:31,299 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:31,302 basehttp 51827 123145541275648 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:15:39,536 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:39,570 log 51827 123145558065152 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:39,581 basehttp 51827 123145558065152 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:15:42,505 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/connection.py", line 58, in __getitem__
+    return getattr(self._connections, alias)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/asgiref/local.py", line 121, in __getattr__
+    return getattr(storage, key)
+AttributeError: '_thread._local' object has no attribute 'read_replica'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/middleware.py", line 70, in __call__
+    self.process_request(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/middleware.py", line 120, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/models.py", line 191, in save
+    Request.garbage_collect(force=False)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/models.py", line 160, in garbage_collect
+    time_cutoff = cls.objects.order_by(
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 449, in __getitem__
+    qs._fetch_all()
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 284, in __iter__
+    compiler = queryset.query.get_compiler(queryset.db)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/sql/query.py", line 300, in get_compiler
+    connection = connections[using]
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/connection.py", line 61, in __getitem__
+    raise self.exception_class(f"The connection '{alias}' doesn't exist.")
+django.utils.connection.ConnectionDoesNotExist: The connection 'read_replica' doesn't exist.
+ERROR 2025-07-24 16:15:42,507 basehttp 51827 123145541275648 "GET /ws/ HTTP/1.1" 500 121847
+ERROR 2025-07-24 16:15:43,581 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:43,651 log 51827 123145558065152 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:43,669 basehttp 51827 123145558065152 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:15:46,533 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:46,539 basehttp 51827 123145541275648 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:15:52,856 log 51827 123145558065152 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:52,866 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/connection.py", line 58, in __getitem__
+    return getattr(self._connections, alias)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/asgiref/local.py", line 121, in __getattr__
+    return getattr(storage, key)
+AttributeError: '_thread._local' object has no attribute 'read_replica'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/middleware.py", line 70, in __call__
+    self.process_request(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/middleware.py", line 120, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/models.py", line 191, in save
+    Request.garbage_collect(force=False)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/models.py", line 160, in garbage_collect
+    time_cutoff = cls.objects.order_by(
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 449, in __getitem__
+    qs._fetch_all()
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 284, in __iter__
+    compiler = queryset.query.get_compiler(queryset.db)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/sql/query.py", line 300, in get_compiler
+    connection = connections[using]
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/connection.py", line 61, in __getitem__
+    raise self.exception_class(f"The connection '{alias}' doesn't exist.")
+django.utils.connection.ConnectionDoesNotExist: The connection 'read_replica' doesn't exist.
+ERROR 2025-07-24 16:15:52,872 basehttp 51827 123145558065152 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:15:55,720 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:15:55,723 basehttp 51827 123145541275648 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:16:09,399 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:16:09,453 log 51827 123145558065152 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/connection.py", line 58, in __getitem__
+    return getattr(self._connections, alias)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/asgiref/local.py", line 121, in __getattr__
+    return getattr(storage, key)
+AttributeError: '_thread._local' object has no attribute 'read_replica'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/middleware.py", line 70, in __call__
+    self.process_request(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/middleware.py", line 120, in process_request
+    request_model = RequestModelFactory(request).construct_request_model()
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/model_factory.py", line 230, in construct_request_model
+    request_model = models.Request.objects.create(
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/models.py", line 191, in save
+    Request.garbage_collect(force=False)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/silk/models.py", line 160, in garbage_collect
+    time_cutoff = cls.objects.order_by(
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 449, in __getitem__
+    qs._fetch_all()
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/query.py", line 284, in __iter__
+    compiler = queryset.query.get_compiler(queryset.db)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/db/models/sql/query.py", line 300, in get_compiler
+    connection = connections[using]
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/connection.py", line 61, in __getitem__
+    raise self.exception_class(f"The connection '{alias}' doesn't exist.")
+django.utils.connection.ConnectionDoesNotExist: The connection 'read_replica' doesn't exist.
+ERROR 2025-07-24 16:16:09,456 basehttp 51827 123145558065152 "GET /ws/ HTTP/1.1" 500 122423
+ERROR 2025-07-24 16:16:12,319 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:16:12,322 basehttp 51827 123145541275648 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:16:50,247 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:16:50,316 log 51827 123145558065152 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:16:50,320 basehttp 51827 123145558065152 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:16:53,261 log 51827 123145541275648 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:16:53,263 basehttp 51827 123145541275648 "GET /ws/ HTTP/1.1" 500 71135
+INFO 2025-07-24 16:44:49,677 autoreload 52126 140704629943744 Watching for file changes with StatReloader
+ERROR 2025-07-24 16:44:58,078 log 52126 123145595203584 Internal Server Error: /
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:44:58,085 basehttp 52126 123145595203584 "GET / HTTP/1.1" 500 71565
+ERROR 2025-07-24 16:44:58,817 log 52126 123145611993088 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:44:58,823 basehttp 52126 123145611993088 "GET /favicon.ico HTTP/1.1" 500 71479
+ERROR 2025-07-24 16:45:12,700 log 52126 123145595203584 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:45:12,703 basehttp 52126 123145595203584 "GET /ws/ HTTP/1.1" 500 71135
+ERROR 2025-07-24 16:45:26,163 log 52126 123145595203584 Internal Server Error: /
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:45:26,169 basehttp 52126 123145595203584 "GET / HTTP/1.1" 500 71565
+ERROR 2025-07-24 16:45:26,794 log 52126 123145611993088 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:45:26,798 basehttp 52126 123145611993088 "GET /favicon.ico HTTP/1.1" 500 71479
+ERROR 2025-07-24 16:45:31,082 log 52126 123145595203584 Internal Server Error: /admin
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:45:31,085 basehttp 52126 123145595203584 "GET /admin HTTP/1.1" 500 71615
+ERROR 2025-07-24 16:45:31,359 log 52126 123145611993088 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:45:31,363 basehttp 52126 123145611993088 "GET /favicon.ico HTTP/1.1" 500 71484
+ERROR 2025-07-24 16:45:34,312 log 52126 123145595203584 Internal Server Error: /ws/
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/miniconda3/envs/py310/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/mc/dev/3s/backend/apps/core/middleware.py", line 108, in process_request
+    if request.user.is_authenticated:
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+ERROR 2025-07-24 16:45:34,317 basehttp 52126 123145595203584 "GET /ws/ HTTP/1.1" 500 71135
+INFO 2025-07-24 19:18:38,082 autoreload 55354 140704629943744 Watching for file changes with StatReloader
+ERROR 2025-08-12 09:53:40,635 services 67676 140704642572160 Failed to initialize system services: The connection 'read_replica' doesn't exist.
+INFO 2025-08-12 09:55:54,358 services 67788 140704642572160 Default system configurations initialized
+INFO 2025-08-12 09:55:54,363 services 67788 140704642572160 System services initialized successfully

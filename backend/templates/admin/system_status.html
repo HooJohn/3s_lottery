@@ -1,0 +1,175 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static admin_urls %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <style>
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .status-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status-card h3 {
+            margin: 0 0 15px 0;
+            color: #333;
+            font-size: 18px;
+            border-bottom: 2px solid #0073aa;
+            padding-bottom: 5px;
+        }
+        .metric-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .metric-item:last-child {
+            border-bottom: none;
+        }
+        .metric-name {
+            font-weight: 500;
+        }
+        .metric-value {
+            font-weight: bold;
+        }
+        .metric-normal { color: #28a745; }
+        .metric-warning { color: #ffc107; }
+        .metric-critical { color: #dc3545; }
+        
+        .log-container {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .log-entry {
+            font-family: monospace;
+            font-size: 12px;
+            margin-bottom: 5px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .log-debug { background-color: #f8f9fa; color: #6c757d; }
+        .log-info { background-color: #d1ecf1; color: #0c5460; }
+        .log-warning { background-color: #fff3cd; color: #856404; }
+        .log-error { background-color: #f8d7da; color: #721c24; }
+        .log-critical { background-color: #d1ecf1; color: #721c24; font-weight: bold; }
+        
+        .security-event {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid;
+            border-radius: 4px;
+        }
+        .security-low { border-left-color: #28a745; background-color: #d4edda; }
+        .security-medium { border-left-color: #ffc107; background-color: #fff3cd; }
+        .security-high { border-left-color: #fd7e14; background-color: #ffeaa7; }
+        .security-critical { border-left-color: #dc3545; background-color: #f8d7da; }
+        
+        .refresh-btn {
+            background: #0073aa;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .refresh-btn:hover {
+            background: #005a87;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<button class="refresh-btn" onclick="location.reload()">刷新状态</button>
+
+<!-- 性能指标 -->
+<div class="status-grid">
+    <div class="status-card">
+        <h3>系统性能指标</h3>
+        {% for metric in performance_metrics %}
+        <div class="metric-item">
+            <span class="metric-name">{{ metric.metric_name }}</span>
+            <span class="metric-value {% if metric.is_critical %}metric-critical{% elif metric.is_warning %}metric-warning{% else %}metric-normal{% endif %}">
+                {{ metric.value|floatformat:2 }} {{ metric.unit }}
+            </span>
+        </div>
+        {% empty %}
+        <p>暂无性能数据</p>
+        {% endfor %}
+    </div>
+    
+    <div class="status-card">
+        <h3>系统状态</h3>
+        <div class="metric-item">
+            <span class="metric-name">数据库连接</span>
+            <span class="metric-value metric-normal">正常</span>
+        </div>
+        <div class="metric-item">
+            <span class="metric-name">Redis缓存</span>
+            <span class="metric-value metric-normal">正常</span>
+        </div>
+        <div class="metric-item">
+            <span class="metric-name">Celery队列</span>
+            <span class="metric-value metric-normal">正常</span>
+        </div>
+        <div class="metric-item">
+            <span class="metric-name">WebSocket服务</span>
+            <span class="metric-value metric-normal">正常</span>
+        </div>
+    </div>
+</div>
+
+<!-- 安全事件 -->
+<div class="status-card">
+    <h3>最近24小时安全事件</h3>
+    {% for event in security_events %}
+    <div class="security-event security-{{ event.severity|lower }}">
+        <strong>[{{ event.get_severity_display }}] {{ event.get_event_type_display }}</strong><br>
+        {{ event.description }}<br>
+        <small>时间: {{ event.created_at|date:"Y-m-d H:i:s" }} | 
+        {% if event.user %}用户: {{ event.user.phone }}{% endif %} | 
+        {% if event.ip_address %}IP: {{ event.ip_address }}{% endif %}</small>
+    </div>
+    {% empty %}
+    <p>最近24小时内无安全事件</p>
+    {% endfor %}
+</div>
+
+<!-- 系统日志 -->
+<div class="status-card">
+    <h3>最近系统日志</h3>
+    <div class="log-container">
+        {% for log in recent_logs %}
+        <div class="log-entry log-{{ log.level|lower }}">
+            [{{ log.created_at|date:"Y-m-d H:i:s" }}] [{{ log.level }}] {{ log.module }}: {{ log.message }}
+        </div>
+        {% empty %}
+        <p>暂无日志记录</p>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+// 自动刷新页面（每30秒）
+setTimeout(function() {
+    location.reload();
+}, 30000);
+</script>
+{% endblock %}

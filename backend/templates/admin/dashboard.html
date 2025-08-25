@@ -1,0 +1,171 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static admin_urls %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stat-card h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 16px;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0073aa;
+            margin: 10px 0;
+        }
+        .stat-change {
+            font-size: 14px;
+            color: #666;
+        }
+        .chart-container {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .chart-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-warning {
+            color: #856404;
+            background-color: #fff3cd;
+            border-color: #ffeaa7;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<!-- 系统概览统计 -->
+<div class="dashboard-stats">
+    <div class="stat-card">
+        <h3>总用户数</h3>
+        <div class="stat-number">{{ user_stats.total_users|floatformat:0 }}</div>
+        <div class="stat-change">今日新增: {{ user_stats.new_users_today }}</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>活跃用户</h3>
+        <div class="stat-number">{{ user_stats.active_users_week|floatformat:0 }}</div>
+        <div class="stat-change">最近7天活跃</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>待审核KYC</h3>
+        <div class="stat-number">{{ user_stats.kyc_pending }}</div>
+        <div class="stat-change">需要处理</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>用户总余额</h3>
+        <div class="stat-number">₦{{ financial_stats.total_balance|floatformat:2 }}</div>
+        <div class="stat-change">平台总资金</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>今日存款</h3>
+        <div class="stat-number">{{ financial_stats.deposits_today.count|default:0 }}</div>
+        <div class="stat-change">金额: ₦{{ financial_stats.deposits_today.amount|default:0|floatformat:2 }}</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>今日提款</h3>
+        <div class="stat-number">{{ financial_stats.withdrawals_today.count|default:0 }}</div>
+        <div class="stat-change">金额: ₦{{ financial_stats.withdrawals_today.amount|default:0|floatformat:2 }}</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>活跃游戏</h3>
+        <div class="stat-number">{{ game_stats.games_active }}</div>
+        <div class="stat-change">今日开奖: {{ game_stats.draws_today }}</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>今日投注</h3>
+        <div class="stat-number">{{ game_stats.bets_today.count|default:0 }}</div>
+        <div class="stat-change">金额: ₦{{ game_stats.bets_today.amount|default:0|floatformat:2 }}</div>
+    </div>
+</div>
+
+<!-- 警告信息 -->
+{% if user_stats.kyc_pending > 10 %}
+<div class="alert alert-warning">
+    <strong>注意:</strong> 有 {{ user_stats.kyc_pending }} 个KYC申请待审核，请及时处理。
+</div>
+{% endif %}
+
+<!-- VIP用户分布图表 -->
+<div class="chart-container">
+    <div class="chart-title">VIP用户分布</div>
+    <canvas id="vipChart" width="400" height="200"></canvas>
+</div>
+
+<!-- 返水统计 -->
+<div class="chart-container">
+    <div class="chart-title">今日返水统计</div>
+    <p>返水用户数: {{ rebate_stats.count|default:0 }}</p>
+    <p>返水总金额: ₦{{ rebate_stats.amount|default:0|floatformat:2 }}</p>
+</div>
+
+<script>
+// VIP分布图表
+const vipCtx = document.getElementById('vipChart').getContext('2d');
+const vipData = {{ vip_distribution|safe }};
+
+new Chart(vipCtx, {
+    type: 'doughnut',
+    data: {
+        labels: vipData.map(item => `VIP${item.vip_level}`),
+        datasets: [{
+            data: vipData.map(item => item.count),
+            backgroundColor: [
+                '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0',
+                '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'right'
+            }
+        }
+    }
+});
+</script>
+{% endblock %}

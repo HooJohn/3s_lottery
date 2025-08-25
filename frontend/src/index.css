@@ -1,0 +1,264 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* 基础样式重置 */
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* 移动端触摸优化 */
+  * {
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* 移动端输入框优化 */
+  input, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  /* 移动端按钮优化 */
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
+  }
+  
+  /* 自定义滚动条 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+  
+  /* Firefox滚动条 */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(209 213 219) rgb(243 244 246);
+  }
+}
+
+/* 组件样式 */
+@layer components {
+  /* 按钮波纹效果 */
+  .btn-ripple {
+    @apply relative overflow-hidden;
+  }
+  
+  .btn-ripple::before {
+    content: '';
+    @apply absolute top-1/2 left-1/2 w-0 h-0 rounded-full bg-white opacity-30;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+  }
+  
+  .btn-ripple:active::before {
+    @apply w-full h-full;
+  }
+  
+  /* 卡片悬停效果 */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-heavy hover:-translate-y-1;
+  }
+  
+  /* 输入框聚焦效果 */
+  .input-focus {
+    @apply transition-all duration-200 focus-within:ring-2 focus-within:ring-primary-100 focus-within:border-primary-500;
+  }
+  
+  /* 彩票号码球样式 */
+  .lottery-ball {
+    @apply w-12 h-12 rounded-full flex items-center justify-center font-bold text-white shadow-medium;
+    background: linear-gradient(135deg, #008751 0%, #006b42 100%);
+  }
+  
+  .lottery-ball.selected {
+    @apply ring-4 ring-primary-200 scale-110;
+    animation: bounce-in 0.3s ease-out;
+  }
+  
+  .lottery-ball.winning {
+    @apply bg-gradient-secondary text-gray-900;
+    animation: bounce-in 0.5s ease-out;
+  }
+  
+  .lottery-ball.drawing {
+    @apply bg-gray-300 text-gray-600;
+    animation: drawing-spin 1s linear infinite;
+  }
+  
+  /* VIP等级徽章 */
+  .vip-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold;
+  }
+  
+  .vip-badge.vip-0 { @apply bg-gray-100 text-gray-800; }
+  .vip-badge.vip-1 { @apply bg-blue-100 text-blue-800; }
+  .vip-badge.vip-2 { @apply bg-green-100 text-green-800; }
+  .vip-badge.vip-3 { @apply bg-yellow-100 text-yellow-800; }
+  .vip-badge.vip-4 { @apply bg-orange-100 text-orange-800; }
+  .vip-badge.vip-5 { @apply bg-red-100 text-red-800; }
+  .vip-badge.vip-6 { @apply bg-purple-100 text-purple-800; }
+  .vip-badge.vip-7 { @apply bg-gradient-secondary text-gray-900; }
+  
+  /* 状态指示器 */
+  .status-indicator {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-indicator.pending { @apply bg-warning-100 text-warning-800; }
+  .status-indicator.processing { @apply bg-info-100 text-info-800; }
+  .status-indicator.completed { @apply bg-success-100 text-success-800; }
+  .status-indicator.failed { @apply bg-danger-100 text-danger-800; }
+  .status-indicator.cancelled { @apply bg-gray-100 text-gray-800; }
+  
+  /* 倒计时数字 */
+  .countdown-digit {
+    @apply bg-danger-500 text-white px-2 py-1 rounded font-mono font-bold;
+    min-width: 2rem;
+    text-align: center;
+  }
+}
+
+/* 工具类 */
+@layer utilities {
+  /* 隐藏滚动条 */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* 玻璃效果 */
+  .glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* 动画关键帧 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% { 
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% { 
+    transform: scale(1.05);
+  }
+  70% { 
+    transform: scale(0.9);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drawing-spin {
+  0% { 
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: rotate(180deg) scale(1.1);
+    opacity: 1;
+  }
+  100% { 
+    transform: rotate(360deg) scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* 移动端响应式样式 */
+@media (max-width: 640px) {
+  .container-mobile {
+    @apply px-4 py-2;
+  }
+  
+  .btn-mobile {
+    @apply min-h-[44px] px-6 py-3 text-base;
+  }
+  
+  .input-mobile {
+    @apply min-h-[44px] px-4 py-3 text-base;
+  }
+}
+
+/* 减少动画模式 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

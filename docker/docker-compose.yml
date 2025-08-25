@@ -1,0 +1,115 @@
+version: '3.8'
+
+services:
+  # 后端Django服务
+  backend:
+    build:
+      context: ../backend
+      dockerfile: ../docker/backend/Dockerfile
+    container_name: lottery-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - DATABASE_URL=postgresql://lottery_user:lottery_password_2024@postgres-master:5432/lottery_platform
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+    volumes:
+      - ../backend:/app
+    depends_on:
+      - postgres-master
+      - redis
+    networks:
+      - lottery-network
+    command: python manage.py runserver 0.0.0.0:8000
+
+  # Celery Worker
+  celery-worker:
+    build:
+      context: ../backend
+      dockerfile: ../docker/backend/Dockerfile
+    container_name: lottery-celery-worker
+    environment:
+      - DEBUG=True
+      - DATABASE_URL=postgresql://lottery_user:lottery_password_2024@postgres-master:5432/lottery_platform
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+    volumes:
+      - ../backend:/app
+    depends_on:
+      - postgres-master
+      - redis
+    networks:
+      - lottery-network
+    command: celery -A lottery_platform worker -l info
+
+  # Celery Beat (定时任务)
+  celery-beat:
+    build:
+      context: ../backend
+      dockerfile: ../docker/backend/Dockerfile
+    container_name: lottery-celery-beat
+    environment:
+      - DEBUG=True
+      - DATABASE_URL=postgresql://lottery_user:lottery_password_2024@postgres-master:5432/lottery_platform
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+    volumes:
+      - ../backend:/app
+    depends_on:
+      - postgres-master
+      - redis
+    networks:
+      - lottery-network
+    command: celery -A lottery_platform beat -l info
+
+  # 前端React服务
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../docker/frontend/Dockerfile
+    container_name: lottery-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../frontend:/app
+      - /app/node_modules
+    networks:
+      - lottery-network
+    command: npm run dev
+
+  # 管理后台
+  admin:
+    build:
+      context: ../admin
+      dockerfile: ../docker/admin/Dockerfile
+    container_name: lottery-admin
+    ports:
+      - "3001:3000"
+    volumes:
+      - ../admin:/app
+      - /app/node_modules
+    networks:
+      - lottery-network
+    command: npm run dev
+
+  # Nginx反向代理
+  nginx:
+    image: nginx:alpine
+    container_name: lottery-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - backend
+      - frontend
+      - admin
+    networks:
+      - lottery-network
+
+networks:
+  lottery-network:
+    external: true
